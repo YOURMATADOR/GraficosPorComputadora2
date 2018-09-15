@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplo - Teclado</title>
+	<script type="text/javascript" src="three.js"></script>
+	<script type="text/javascript" src="jquery-1.9.0.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+	<!-- div en el que mostraremos la salida -->
+	<div id="SalidaWebGL">
+	</div>
+	<!-- funcion Javascript que ejecutará nuestro ejemplo sobre Three.js -->
+	<script type="text/javascript">
+		// Cuando se cargue la página se ejecutará nuestra función
+		$(function () {
+
+			//Crear una escena, que contendrá todos los elementos como objetos, cámaras y luces.
+			var escena = new THREE.Scene();
+
+			//Crear una cámara, que define hacia dónde estamos mirando.
+			var camara = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+// 			var texture = new THREE.TextureLoader().load( "textures/water.jpg" );
+// texture.wrapS = THREE.RepeatWrapping;
+// texture.wrapT = THREE.RepeatWrapping;
+// texture.repeat.set( 4, 4 );
+
+var colorFondo = new THREE.Color('rgb(38.8%, 49.7%, 85.9%)');
+escena.background=colorFondo;
+			//Crear un objeto render y establecer su tamaño
+			var renderizador = new THREE.WebGLRenderer({alpha: true});
+			renderizador.setClearColor('rgb(38.8%, 49.7%, 85.9%)', 1);
+			renderizador.setSize(window.innerWidth, window.innerHeight);
+			renderizador.shadowMapEnabled = true;
+			var ejes = new THREE.AxisHelper( 20 );
+			escena.add(ejes);
+			var luz= new THREE.SpotLight( 0xffffff );
+			luz.position.set( -40, 60, -10 );
+                                                luz.castShadow = true;
+			escena.add( luz );
+
+                        var mBola = new THREE.MeshBasicMaterial( { map : THREE.ImageUtils.loadTexture( 'koganei_by_kuvshinov_ilya-db4l66f.jpg' ) } );
+
+			//Crear el plano que simula el suelo
+			var geometriaDelPlano = new THREE.PlaneGeometry(60,20);
+			var materialDelPlano = new THREE.MeshLambertMaterial({color: 0xcccccc, transparent: true, opacity: 0.1});
+			var plano = new THREE.Mesh(geometriaDelPlano,materialDelPlano);
+			plano.receiveShadow = true;
+
+			//Rotar y posicionar el plano
+			plano.rotation.x=-0.5*Math.PI;
+			plano.position.x=15
+			plano.position.y=0
+			plano.position.z=0
+
+			//Agregar el plano a la escena
+			//escena.add(plano);
+
+			//Crear un cubo
+			var geometriaDelCubo = new THREE.CubeGeometry(4,4,4);
+			var materialDelCubo = new THREE.MeshLambertMaterial({color: 0xff0000});
+			var cubo = new THREE.Mesh(geometriaDelCubo, materialDelCubo);
+			cubo.castShadow = true;
+
+			//Posicionar el cubo
+			cubo.position.x=-4;
+			cubo.position.y=3;
+			cubo.position.z=0;
+
+			//Agregar el cubo a la escena
+			escena.add(cubo);
+
+			
+			//Posicionamos la cámara y hacemos que apunte al centro de la escena.
+			camara.position.x = -30;
+			camara.position.y = 40;
+			camara.position.z = 30;
+			camara.lookAt(cubo.position);
+
+			//Asociamos el resultado del renderizado con el elemento html adecuado (un div o un canvas)
+			$("#SalidaWebGL").append(renderizador.domElement);
+
+			//Renderizamos la escena
+			renderizador.render(escena, camara);
+  
+     			 
+ 			// llamada a funcion de animación
+        			document.onkeydown=animar;
+
+        			function animar(event) {
+						camara.lookAt(cubo.position);
+
+				switch(event.keyCode){
+            				   case 88: cubo.rotation.x += 0.05; break;
+            				   case 89: cubo.rotation.y += 0.05; break;
+            				   case 90: cubo.rotation.z += 0.05; break;
+							   case 87: cubo.position.x += 0.5; break; 
+							   case 68: cubo.position.z += 0.5; break;
+							   case 65: cubo.position.z -= 0.5; break;
+							   case 83: cubo.position.x -= 0.5; break;                              }
+
+            				requestAnimationFrame(animar);
+            				renderizador.render(escena, camara);
+        			}
+
+		});
+	</script>
+</body>
+</html>
