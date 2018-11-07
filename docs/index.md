@@ -22,14 +22,14 @@ _Descripcion del problema_ :pencil2:
 
 > Cubo con animacion de rotacion en los ejes X y Y de manera constante ademas de que la camara es estatica, las caras del cubo son de diferentes colores, ademas de reflejar luz y sombra.
 
- _Documentacion_ | 
+ _Documentacion_ :page_with_curl: | 
 ---------|
  [Materiales,luces y sombras](/pdf/materiales_luces_y_sombras.pdf) | 
   [trabajando con las caras](/pdf/trabajando_con_las_caras.pdf) | 
  
  ---
 
- ## [Dado rotativo](/dado/cubo.html)
+## [Dado rotativo](/dado/cubo.html)
 
 _Descripcion del problema_ :pencil2:
 
@@ -37,7 +37,7 @@ _Descripcion del problema_ :pencil2:
 
 > Cubo con aparariencia de un dado con animacion de rotacion en los ejes X y Y de manera constante ademas de que la camara es estatica, las caras del cubo son de diferentes colores, ademas de reflejar luz y sombra.
 
- _Documentacion_:page_with_curl: | 
+ _Documentacion_ :page_with_curl: | 
 ---------|
  [Materiales,luces y sombras](/pdf/materiales_luces_y_sombras.pdf) | 
   [trabajando con las caras](/pdf/trabajando_con_las_caras.pdf) | 
