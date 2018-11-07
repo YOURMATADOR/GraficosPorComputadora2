@@ -24,7 +24,7 @@ _Descripcion del problema_ :pencil2:
 
  _Documentacion_ | 
 ---------|
- [Materiales,luces y sombras](/../pdf/materiales_luces_y_sombras.pdf) | 
-  [trabajando con las caras](/../pdf/trabajando_con_las_caras.pdf) | 
+ [Materiales,luces y sombras](/pdf/materiales_luces_y_sombras.pdf) | 
+  [trabajando con las caras](/pdf/trabajando_con_las_caras.pdf) | 
  
  ---
