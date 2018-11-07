@@ -10,7 +10,7 @@ layout: default
   top.document.getElementsByTagName("head")[0].appendChild(link);
 } </script>
 
-  _Jesus Eduardo Avila Mancilla_
+  _Jesus Eduardo Avila Mancilla_ :penguin:
 
 # Unidad 1
 ---
@@ -23,6 +23,21 @@ _Descripcion del problema_ :pencil2:
 > Cubo con animacion de rotacion en los ejes X y Y de manera constante ademas de que la camara es estatica, las caras del cubo son de diferentes colores, ademas de reflejar luz y sombra.
 
  _Documentacion_ | 
+---------|
+ [Materiales,luces y sombras](/pdf/materiales_luces_y_sombras.pdf) | 
+  [trabajando con las caras](/pdf/trabajando_con_las_caras.pdf) | 
+ 
+ ---
+
+ ## [Dado rotativo](/dado/cubo.html)
+
+_Descripcion del problema_ :pencil2:
+
+
+
+> Cubo con aparariencia de un dado con animacion de rotacion en los ejes X y Y de manera constante ademas de que la camara es estatica, las caras del cubo son de diferentes colores, ademas de reflejar luz y sombra.
+
+ _Documentacion_:page_with_curl: | 
 ---------|
  [Materiales,luces y sombras](/pdf/materiales_luces_y_sombras.pdf) | 
   [trabajando con las caras](/pdf/trabajando_con_las_caras.pdf) | 
