@@ -14,7 +14,7 @@ layout: default
 
 # Unidad 1
 ---
-## Cubo rotativo
+## [Cubo rotativo](/caras3D/cubo.html)
 
 _Descripcion del problema_ :pencil2:
 
@@ -22,5 +22,9 @@ _Descripcion del problema_ :pencil2:
 
 > Cubo con animacion de rotacion en los ejes X y Y de manera constante ademas de que la camara es estatica, las caras del cubo son de diferentes colores, ademas de reflejar luz y sombra.
 
-### [Cubo rotativo](/caras3D/cubo.html)
-
+ _Documentacion_ | 
+---------|
+ [Materiales,luces y sombras](/../pdf/materiales_luces_y_sombras.pdf) | 
+  [trabajando con las caras](/../pdf/trabajando_con_las_caras.pdf) | 
+ 
+ ---
