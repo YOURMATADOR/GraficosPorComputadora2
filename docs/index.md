@@ -75,6 +75,7 @@ _Descripcion del problema_ :pencil2:
 
 # Miselaneo 
 
+
 ## [Nombre](/nombre/index.html)
 
 _Descripcion del problema_ :pencil2:
