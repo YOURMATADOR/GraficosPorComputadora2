@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset='utf8'>
+      <title>laminas</title>		
+      <style type="text/css">
+         body{
+            margin: 0;
+         }
+         #escenario{
+            background: #BBBBBB;
+            height: 700px;
+            position: fixed;
+	    width: 1366px;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="escenario"></div>
+      <script type="text/javascript" src='jquery-1.8.2.min.js'></script>
+      <script type="text/javascript" src='Three.js'></script>
+      <script type="text/javascript">
+
+      var ancho = 1366, alto  = 700;
+      var angulo = 30, ratio  = ancho / alto, cerca  = 0.1, lejos  = 10000;
+      var escenario = $('#escenario');
+      
+      var miRender = new THREE.WebGLRenderer();
+      var miCamara = new THREE.PerspectiveCamera(angulo, ratio, cerca, lejos);
+      var miEscena = new THREE.Scene();
+			
+      
+      miCamara.position.x = 300;
+      miCamara.position.y = 200;
+      miCamara.position.z = -300;
+      miRender.setSize(ancho, alto);
+      escenario.append(miRender.domElement);
+
+/* Rectangulo1 */
+      var formaRectangulo =new THREE.Geometry(); //una forma sin forma
+
+      //Definimos vectores 3D para cada vertice de la forma:
+      var vector1 = new THREE.Vector3(0,0,0);
+      var vector2 = new THREE.Vector3(100,0,0);
+      var vector3 = new THREE.Vector3(100,50,0);
+      var vector4 = new THREE.Vector3(0,50,0);
+
+      //Formamos lo vertices de la forma con los vectores anteriores (4 porque es un rectangulo)
+      formaRectangulo.vertices.push(new THREE.Vertex(vector1));
+      formaRectangulo.vertices.push(new THREE.Vertex(vector2));
+      formaRectangulo.vertices.push(new THREE.Vertex(vector3));
+      formaRectangulo.vertices.push(new THREE.Vertex(vector4));
+
+      formaRectangulo.faces.push(new THREE.Face4(0,1,2,3)); //creamos la cara 2d con 4 vertice (es rectangulo)
+      
+      var matRec1 = new THREE.MeshBasicMaterial({color:0xAA5500}); //material de la forma
+      var Rectangulo1 = new THREE.Mesh(formaRectangulo,matRec1); //Malla para el rectangulo
+
+      Rectangulo1.position.set(0,0,0);
+      Rectangulo1.castShadow = Rectangulo1.receiveShadow = true;
+
+
+
+/* Triangulo1 */
+      var formaTriangulo = new THREE.Geometry(); //una forma sin forma
+
+      //Definimos vectores 3D para cada vertice de la forma:
+      var vector5 = new THREE.Vector3(0,0,0);
+      var vector6 = new THREE.Vector3(0,25,-25);
+      var vector7 = new THREE.Vector3(0,0,-50);
+
+      //Formamos lo vertices de la forma con los vectores anteriores (3 porque es triangulo)
+      formaTriangulo.vertices.push(new THREE.Vertex(vector5));
+      formaTriangulo.vertices.push(new THREE.Vertex(vector6));
+      formaTriangulo.vertices.push(new THREE.Vertex(vector7));
+    
+      formaTriangulo.faces.push( new THREE.Face3(0,1,2)); //Cara 2d con 3 vertices (es triangulo)
+      var matTri1 =  new THREE.MeshBasicMaterial({color:0xAA0000});   //material del triangulo
+      var Triangulo1= new THREE.Mesh(formaTriangulo, matTri1); //malla para el triangulo
+      Triangulo1.position.set(0,50,0);
+      Triangulo1.castShadow = Triangulo1.receiveShadow = true;
+
+
+
+	
+/* LUZ */
+      var luz2 = new THREE.SpotLight(0xFFFFFF);
+      luz2.position.x = 0; luz2.position.y = 200; luz2.position.z = -200;
+      luz2.castShadow = true;
+		
+      var luz = new THREE.SpotLight(0xFFFFFF);
+      luz.position.x = 0; luz.position.y = 200; luz.position.z = 200;
+      luz.castShadow = true;
+		
+      miEscena.add(luz); 
+      miEscena.add(luz2);
+      miEscena.add(miCamara);
+      miEscena.add(Rectangulo1);
+      miEscena.add(Triangulo1);
+
+
+      miCamara.lookAt(Rectangulo1.position);    
+
+      animar();
+      var ang=1;
+      function animar(){
+         requestAnimationFrame(animar);
+         renderizar();
+      }
+
+      function renderizar(){
+         if (ang>=360) ang=1; else ang+=0.01;
+         var x= 424 * Math.cos(ang);
+         var z= 424 * Math.sin(ang);
+         miCamara.position.x = x; 
+         miCamara.position.z = z;
+         miCamara.lookAt(Rectangulo1.position);
+         miRender.render(miEscena,miCamara);
+      }
+      </script>
+   </body>
+</html>

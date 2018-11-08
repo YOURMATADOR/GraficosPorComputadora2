@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplo - Ratón</title>
+	<script src="three.js"></script>
+	<script src="jquery-1.9.0.js"></script>
+                 <script src="TrackballControls.js"></script>
+
+</head>
+<body>
+    <div id="SalidaWebGL"> </div>
+    <script type="text/javascript">
+      $(function () {                                               
+        var escena = new THREE.Scene();
+        var camara = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camara.position.set(-30, 40, 30); camara.lookAt(escena.position);
+        var renderizador = new THREE.WebGLRenderer({alpha: true});
+        renderizador.setClearColor(0x000000, 0.1);
+        renderizador.setSize(window.innerWidth, window.innerHeight);
+
+        var luz= new THREE.SpotLight( 0xffffff );  luz.position.set( -40, 60, -10 ); escena.add( luz );	
+
+        var geometriaDelCubo = new THREE.CubeGeometry(4,4,4);
+        var materialDelCubo = new THREE.MeshLambertMaterial({color: 0xff0000});
+        var cubo = new THREE.Mesh(geometriaDelCubo, materialDelCubo);
+        cubo.position.set(-4, 3, 0);
+        escena.add( cubo );
+
+
+        control = new THREE.TrackballControls( camara );
+        control.rotateSpeed = 1.0;  control.zoomSpeed = 1.2; control.panSpeed = 0.8; control.noZoom = false;
+        control.noPan = false; control.staticMoving = true; control.dynamicDampingFactor = 0.3;
+        control.keys = [ 65, 83, 68 ];
+        control.addEventListener( 'change', renderizar );
+
+         $("#SalidaWebGL").append(renderizador.domElement);
+         renderizador.render(escena, camara);
+         
+         function animar() {
+            requestAnimationFrame( animar );
+            control.update();
+          }
+          function renderizar() {
+            renderizador.render( escena, camara );
+          }
+
+          animar();
+    });
+  </script>
+</body>
+</html>
