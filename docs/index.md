@@ -59,8 +59,9 @@ _Descripcion del problema_ :pencil2:
  [Eventos con el teclado](/pdf/teclado.pdf) | 
 
  ---
- # Unidad 3
-## [Casa](/teclado/teclado.html)
+# Unidad 3
+
+## [Casa](/2Den3D/casa.html)
 
 _Descripcion del problema_ :pencil2:
 
@@ -93,6 +94,7 @@ _Descripcion del problema_ :pencil2:
 _Descripcion del problema_ :pencil2:
 
 > Agregar multiples esferas que abarquen los ejes x, y, z  en ambos lados en total habra 7 esferas
+
 ---
 
 ## [Controlar posicion de cubo con el raton](/control_raton/track.html)
@@ -100,6 +102,7 @@ _Descripcion del problema_ :pencil2:
 _Descripcion del problema_ :pencil2:
 
 > Agregar la posibilidad de controlar los ejes de posicion y rotacion de un cubo en una escena
+
 ---
 
 ## [Laberinto](/laberinto/base2.html)
@@ -107,5 +110,7 @@ _Descripcion del problema_ :pencil2:
 _Descripcion del problema_ :pencil2:
 
 > Crear un laberinto con multiples niveles y objetos dinamicos.
+
+
 ---
 
