@@ -13,6 +13,7 @@ layout: default
   _Jesus Eduardo Avila Mancilla_ :penguin:
 
 # Unidad 1
+
 ---
 ## [Cubo rotativo](/caras3D/cubo.html)
 
@@ -44,7 +45,7 @@ _Descripcion del problema_ :pencil2:
  
  ---
 
- # Unidad 2
+# Unidad 2
 
 ## [Eventos con el teclado](/teclado/teclado.html)
 
@@ -59,6 +60,7 @@ _Descripcion del problema_ :pencil2:
  [Eventos con el teclado](/pdf/teclado.pdf) | 
 
  ---
+
 # Unidad 3
 
 ## [Casa](/2Den3D/casa.html)
