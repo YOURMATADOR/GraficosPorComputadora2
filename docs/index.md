@@ -92,7 +92,7 @@ _Descripcion del problema_ :pencil2:
 
 > Modelar un cubo y una esfera simulando una pelota en movimiento ambas figuras, ademas de agregar controles que permitan modificar la velocidad de las animaciones
 
-## [Pelota rebotando](/modeloPelota/index.html)
+## [Multiples esferas](/multiplesEsferas/index.html)
 
 _Descripcion del problema_ :pencil2:
 
